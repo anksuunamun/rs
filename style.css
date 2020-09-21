@@ -1,0 +1,470 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.content-wrapper {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.background-block_theme_first {
+    background-image: url('./assets/bg-image.png');
+    height: 744px;
+    color: #fff;
+}
+
+.header__menu {
+    height: 95px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    width: 585px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu__menu-item {
+    font-size: 14px;
+    line-height: 140%;
+    opacity: 0.8;
+}
+.menu__menu-item:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.menu__menu-item_active {
+    opacity: 1;
+    text-decoration: underline;
+}
+.menu__menu-item_active:hover {
+    opacity: 0.8;
+}
+
+.menu__logo {
+    opacity: 1;
+}
+.menu__logo:hover {
+    cursor: default;
+}
+
+.menu__menu-item:first-child,
+.menu__menu-item:nth-child(2) {
+    justify-self: start;
+}
+
+.menu__menu-item:last-child,
+.menu__menu-item:nth-child(4) {
+    justify-self: end;
+}
+
+.menu__menu-item:nth-child(3) {
+    justify-self: center;
+}
+
+.your-life {
+    width: 737px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 132px;
+    text-align: center;
+}
+
+.your-life__h1 {
+    text-transform: uppercase;
+    letter-spacing: 4.5px;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 75px;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.your-life__p {
+    height: 50px;
+    width: 484px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 31px;
+    line-height: 25.2px;
+}
+
+.default-button {
+    height: 46px;
+    background-color: #00AFDB;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    width: 184px;
+    color: white;
+    border: none;
+}
+
+.default-button:hover {
+    background-color: #009CC2;
+    cursor: pointer;
+}
+
+.links {
+    height: 20px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 181px;
+}
+
+.links__link-item:nth-child(2n) {
+    border: 1.3px solid white;
+    box-sizing: border-box;
+    width: 20px;
+    border-radius: 100%;
+
+}
+
+.links__link-item img {
+    padding-bottom: 2px;
+}
+.links__link-item:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.rappresent {
+    height: 587px;
+    width: 1062px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-bottom: 155px;
+}
+
+.phrase-with-btn {
+    width: 379px;
+    height: 233px;
+    margin-top: 176px;
+    margin-bottom: 176px;
+    color: #373737;
+}
+
+.phrase-with-btn__h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+.phrase-with-btn__p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    height: 80px;
+    width: 407px;
+}
+
+.rappresent__default-button {
+    height: 46px;
+    margin-top: 17px;
+}
+
+.rappresent .content-image {
+    margin-top: 19px;
+}
+
+.implement {
+    height: 587px;
+    width: 1062px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 120px;
+    margin-bottom: 135px;
+}
+
+.implement .phrase-with-btn {
+    width: 404px;
+    padding-right: 112px;
+}
+
+.implement .phrase-with-btn__p {
+    padding-top: 3px;
+    margin-bottom: 9px;
+}
+
+.implement .phrase-with-btn__h2 {
+    padding-top: 2px;
+}
+
+.implement__default-button {
+    width: 180px;
+}
+
+.our-community {
+    height: 504px;
+    background-color: #F5F6F7;
+
+}
+
+.our-community__description {
+    width: 298px;
+    height: 175px;
+    margin-top: 155px;
+    margin-left: 269px;
+    margin-bottom: 174px;
+    margin-right: 135px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    bottom: 35.5px
+}
+
+.our-community__h3 {
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #373737;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.our-community__p {
+    color: #4E4E4E;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.our-community__photos-block {
+    display: inline-block;
+    width: 894px;
+    margin-top: 83px;
+}
+
+.our-community__arrows {
+    width: 83px;
+    height: 18px;
+    margin-bottom: 20px;
+    color: #373737;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    position: relative;
+    left: 548px;
+}
+
+.our-community__arrow-item:first-child {
+    padding-right: 6px;
+}
+
+.our-community__arrow-item:last-child {
+    padding-left: 6px;
+}
+
+.our-community__arrow-item:first-child:hover,
+.our-community__arrow-item:last-child:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+
+.our-community__photos img:first-child,
+.our-community__photos img:nth-child(2) {
+    margin-right: 26px;
+}
+
+.background-block_theme_second {
+    background-image: url('./assets/pexels-christina-morillo-1181675\ 1.png');
+    height: 524px;
+}
+
+.subscribe {
+    height: 104px;
+    width: 406px;
+    margin: 0 auto;
+    padding-top: 209px;
+    text-align: center;
+}
+
+.subscribe__h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: -7px;
+    margin-bottom: 30px;
+}
+
+.subscribe__form {
+    width: 406px;
+    height: 46px;
+    margin-top: -2px;
+
+}
+
+.subscribe__form input {
+    height: 46px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 317px;
+    padding-left: 23px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #373737;
+
+}
+
+.check-button {
+    background-color: #00AFDB;
+    height: 46px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 66px;
+    margin-left: -4px;
+    position: relative;
+    bottom: -1px;
+}
+
+.check-button:hover {
+    background-color: #009CC2;
+    cursor: pointer;
+}
+
+
+.download {
+    background-color: #F5F6F7;
+    height: 464px;
+}
+
+.download__h2 {
+    margin-top: 0;
+    height: 28px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #373737;
+}
+
+.download__p {
+    color: #373737;
+    width: 480px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+.download__content {
+    margin: 0 auto;
+    padding-top: 120px;
+    width: 475px;
+    text-align: center;
+}
+
+.download__default-button:hover {
+    background-color: #009CC2;
+}
+
+.apple-button {
+    margin-right: 30px;
+}
+
+.download__default-button {
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+.apple-button__logo {
+    display: inline-block;
+    background-color: #009CC2;
+    width: 59px;
+    height: 46px;
+    position: relative;
+    left: 12px;
+    bottom: 1px;
+}
+.android-button__logo {
+    width: 59px;
+    height: 45px;
+    display: inline-block;
+    background-color: #009CC2;
+    position: relative;
+    left: 10px;
+}
+.download__default-button img {
+    position: relative;
+    top: 10px;
+}
+.default-button span {
+    height: 16px;
+    position: relative;
+    top: 5px;
+}
+.default-button .apple {
+    position: relative;
+    top: 6px;
+}
+.footer {
+    background-color: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 160px;
+    padding-right: 160px;
+    height: 110px;
+    padding-top: 75px;
+}
+
+.footer__text {
+    color: #818181;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.footer__menu {
+    width: 236px;
+    height: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__menu-separator {
+    background-color: #4E4E4E;
+    height: 8px;
+    width: 1px;
+    align-self: center;
+}
+
+.footer__logo {
+    position: relative;
+    bottom: 14px;
+    right: 33px;
+}
+.footer__menu-item:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
