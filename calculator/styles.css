@@ -1,0 +1,153 @@
+body {
+    background-color: #2b2322;
+}
+
+.calculator {
+    color: white;
+    background-color: #392f2d;
+    border: 1px solid #73605b;
+    margin: 100px auto;
+    width: 400px;
+    height: 600px;
+    border-radius: 0.25rem;
+    display: grid;
+    grid-auto-columns: minmax(100px, 400px);
+    grid-auto-rows: 100px;
+    grid-template-areas:
+        "output output output output"
+        "operation-1 operation-2 delete operation-3"
+        "number-1 number-2 number-3 operation-4"
+        "number-4 number-5 number-6 operation-5"
+        "number-7 number-8 number-9 operation-6"
+        "clean number-0 operation-7 equal";
+}
+
+.default-button {
+    color: white;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 2.5px;
+    background-color: rgb(71, 59, 56);
+    border: 1px solid #73605b;
+    border-radius: 0.25rem;
+    margin: 7px;
+}
+
+.default-button:focus {
+    border: 1px solid #73605b;
+    outline: none;
+}
+
+.default-button:hover {
+    background-color: #73605b;
+    cursor: pointer;
+}
+
+.calculator__all-clean-button,
+.calculator__equal-button {
+    background-color: #7e26a6;
+}
+
+.calculator__all-clean-button:hover,
+.calculator__equal-button:hover {
+    background-color: #ae54d8;
+}
+
+.calculator__number-button {
+    background-color: rgb(86, 70, 67);
+}
+
+.calculator__output {
+    grid-area: output;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 2px solid #73605b;
+    border-radius: 0.25rem;
+
+}
+
+.calculator__operation-button:nth-child(2) {
+    grid-area: operation-1;
+}
+
+.calculator__operation-button:nth-child(3) {
+    grid-area: operation-2;
+}
+
+.calculator__operation-button:nth-child(5) {
+    grid-area: operation-3;
+}
+
+.calculator__number-button:nth-child(6) {
+    grid-area: number-1;
+}
+
+.calculator__number-button:nth-child(7) {
+    grid-area: number-2;
+}
+
+.calculator__number-button:nth-child(8) {
+    grid-area: number-3;
+}
+
+.calculator__operation-button:nth-child(9) {
+    grid-area: operation-4;
+}
+
+.calculator__number-button:nth-child(10) {
+    grid-area: number-4;
+}
+
+.calculator__number-button:nth-child(11) {
+    grid-area: number-5;
+}
+
+.calculator__number-button:nth-child(12) {
+    grid-area: number-6;
+}
+
+.calculator__operation-button:nth-child(13) {
+    grid-area: operation-5;
+}
+
+
+.calculator__number-button:nth-child(14) {
+    grid-area: number-7;
+}
+
+.calculator__number-button:nth-child(15) {
+    grid-area: number-8;
+}
+
+.calculator__number-button:nth-child(16) {
+    grid-area: number-9;
+}
+
+.calculator__operation-button:nth-child(17) {
+    grid-area: operation-6;
+}
+
+.calculator__number-button:nth-child(19) {
+    grid-area: number-0;
+}
+
+.calculator__operation-button:nth-child(20) {
+    grid-area: operation-7;
+}
+
+.calculator__delete-button {
+    grid-area: delete;
+}
+
+.calculator__all-clean-button {
+    grid-area: clean;
+}
+
+.calculator__equal-button {
+    grid-area: equal;
+}
