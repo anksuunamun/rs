@@ -411,6 +411,10 @@ body {
     position: relative;
     left: 10px;
 }
+.android-button__logo img:hover,
+.apple-button__logo img:hover {
+    opacity: 0.4;
+}
 .download__default-button img {
     position: relative;
     top: 10px;
@@ -467,4 +471,16 @@ body {
 .footer__menu-item:hover {
     cursor: pointer;
     opacity: 0.5;
+}
+
+@media screen and (max-width: 401px) {
+    body {
+        overflow-x: scroll;
+    }
+}
+@-moz-document url-prefix()
+{
+    .check-button {
+        bottom: 0;
+    }
 }
