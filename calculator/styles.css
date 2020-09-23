@@ -55,7 +55,7 @@ body {
     background-color: #ae54d8;
 }
 
-.calculator__number-button {
+.calculator__number-button, .calculator__decimal-button {
     background-color: rgb(86, 70, 67);
 }
 
@@ -69,7 +69,18 @@ body {
     border: 2px solid #73605b;
     border-radius: 0.25rem;
     color: white;
+    background-color: rgb(71, 59, 56);
+    font-size: 30px;
+    width: 382px; 
+    text-align: right;
+}
 
+.default-button_disabled_true {
+    background-color: #2b2322;
+}
+.default-button_disabled_true:hover {
+    cursor: not-allowed;
+    background-color: #2b2322;
 }
 
 .calculator__operation-button:nth-child(2) {
