@@ -60,7 +60,8 @@ function numberPress(number) {
         if (document.getElementById("calculator-output").innerHTML === '0') {
             document.getElementById("calculator-output").innerHTML = number;
         } else {
-            document.getElementById("calculator-output").innerHTML += number;
+            if (document.getElementById("calculator-output").innerText.length<21){
+            document.getElementById("calculator-output").innerHTML += number;}
         }
     }
 }
