@@ -114,7 +114,6 @@ function operationPress(op) {
             } else {
                 MemoryCurrentNumber = +localOperationMemory;
             }
-            console.log(MemoryCurrentNumber)
             if (MemoryCurrentNumber === Math.trunc(MemoryCurrentNumber)) {
                 document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber.toFixed(0)
             }
@@ -161,10 +160,8 @@ function isDecimal(number, isMulti) {
         if (decimalPlaces < currentDecimalPlaces) {
             decimalPlaces = currentDecimalPlaces
         }
-        console.log(decimalPlaces)
     }
     else if (number !== Math.trunc(number) && isMulti) {
         decimalPlaces += String((number - Math.trunc(number))).split(".")[1].length;
-        console.log(decimalPlaces)
     }
 }
