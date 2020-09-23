@@ -63,16 +63,21 @@ body {
     grid-area: output;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     margin-left: 7px;
     margin-right: 7px;
     border: 2px solid #73605b;
     border-radius: 0.25rem;
     color: white;
     background-color: rgb(71, 59, 56);
-    font-size: 30px;
+    font-size: 33px;
     width: 382px; 
-    text-align: right;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: end;
+    align-items: center;
 }
 
 .default-button_disabled_true {
