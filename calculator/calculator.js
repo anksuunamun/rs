@@ -60,8 +60,9 @@ function numberPress(number) {
         if (document.getElementById("calculator-output").innerHTML === '0') {
             document.getElementById("calculator-output").innerHTML = number;
         } else {
-            if (document.getElementById("calculator-output").innerText.length<21){
-            document.getElementById("calculator-output").innerHTML += number;}
+            if (document.getElementById("calculator-output").innerText.length < 21) {
+                document.getElementById("calculator-output").innerHTML += number;
+            }
         }
     }
 }
@@ -117,8 +118,7 @@ function operationPress(op) {
             }
             if (MemoryCurrentNumber === Math.trunc(MemoryCurrentNumber)) {
                 document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber.toFixed(0)
-            }
-            else {
+            } else {
                 document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber.toFixed(decimalPlaces);
             }
             MemoryPendingOperation = op;
@@ -161,8 +161,7 @@ function isDecimal(number, isMulti) {
         if (decimalPlaces < currentDecimalPlaces) {
             decimalPlaces = currentDecimalPlaces
         }
-    }
-    else if (number !== Math.trunc(number) && isMulti) {
+    } else if (number !== Math.trunc(number) && isMulti) {
         decimalPlaces += String((number - Math.trunc(number))).split(".")[1].length;
     }
 }
