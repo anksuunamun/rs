@@ -33,7 +33,7 @@ all_clean_btn.addEventListener('click', (e) => {
         decimal_btn.classList.remove('default-button_disabled_true')
         incorrectInputData = false;
     }
-    
+
 })
 del_btn.addEventListener('click', (e) => {
     clear(e.target.textContent);
@@ -48,11 +48,14 @@ let MemoryCurrentNumber = 0;
 let MemoryNewNumber = false;
 let MemoryPendingOperation = '';
 let incorrectInputData = false;
+let shouldAddMinus = false;
+let decimalPlaces = 0;
 
 function numberPress(number) {
     if (MemoryNewNumber) {
-        document.getElementById("calculator-output").innerHTML = number;
+        document.getElementById("calculator-output").innerHTML = shouldAddMinus ? number * (-1) : number;
         MemoryNewNumber = false;
+        shouldAddMinus = false;
     } else {
         if (document.getElementById("calculator-output").innerHTML === '0') {
             document.getElementById("calculator-output").innerHTML = number;
@@ -65,6 +68,9 @@ function numberPress(number) {
 function operationPress(op) {
     let localOperationMemory = document.getElementById("calculator-output").innerHTML;
     if (MemoryNewNumber && MemoryPendingOperation !== '=') {
+        if (op === '-') {
+            shouldAddMinus = true
+        }
         document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber;
     } else {
         if (op === 'SQRT') {
@@ -89,35 +95,49 @@ function operationPress(op) {
             }
         } else {
             MemoryNewNumber = true;
+            isDecimal(+localOperationMemory)
             if (MemoryPendingOperation === '+') {
+                isDecimal(+localOperationMemory);
                 MemoryCurrentNumber += +localOperationMemory;
             } else if (MemoryPendingOperation === '-') {
+                isDecimal(+localOperationMemory);
                 MemoryCurrentNumber -= +localOperationMemory;
             } else if (MemoryPendingOperation === '*') {
+                isDecimal(+localOperationMemory, true);
                 MemoryCurrentNumber *= +localOperationMemory;
             } else if (MemoryPendingOperation === '/') {
+                isDecimal(+localOperationMemory, true);
                 MemoryCurrentNumber /= +localOperationMemory;
             } else if (MemoryPendingOperation === 'POW') {
                 MemoryCurrentNumber = Math.pow(MemoryCurrentNumber, +localOperationMemory)
-                
+
             } else {
                 MemoryCurrentNumber = +localOperationMemory;
             }
-            document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber;
+            console.log(MemoryCurrentNumber)
+            if (MemoryCurrentNumber === Math.trunc(MemoryCurrentNumber)) {
+                document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber.toFixed(0)
+            }
+            else {
+                document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber.toFixed(decimalPlaces);
+            }
             MemoryPendingOperation = op;
         }
     }
 }
 
-function clear(id) {
-    if (id === 'AC') {
+function clear(action) {
+    if (action === 'AC') {
         document.getElementById("calculator-output").innerHTML = '0';
-        MemoryNewNumber = true;
-    } else if (id === 'DEL') {
-        document.getElementById("calculator-output").innerHTML = document.getElementById("calculator-output").innerHTML.toString().slice(0, -1);
         MemoryNewNumber = true;
         MemoryCurrentNumber = 0;
         MemoryPendingOperation = '';
+        decimalPlaces = 0;
+    } else if (action === 'DEL') {
+        if (decimalPlaces !== 0) {
+            decimalPlaces -= 1;
+        }
+        document.getElementById("calculator-output").innerHTML = document.getElementById("calculator-output").innerHTML.toString().slice(0, -1);
     }
 }
 
@@ -133,4 +153,18 @@ function decimal() {
         }
     }
     document.getElementById("calculator-output").innerHTML = localDecimalMemory;
+}
+
+function isDecimal(number, isMulti) {
+    if (number !== Math.trunc(number) && !isMulti) {
+        let currentDecimalPlaces = String((number - Math.trunc(number))).split(".")[1].length;
+        if (decimalPlaces < currentDecimalPlaces) {
+            decimalPlaces = currentDecimalPlaces
+        }
+        console.log(decimalPlaces)
+    }
+    else if (number !== Math.trunc(number) && isMulti) {
+        decimalPlaces += String((number - Math.trunc(number))).split(".")[1].length;
+        console.log(decimalPlaces)
+    }
 }
