@@ -19,16 +19,16 @@ all_clean_btn.addEventListener("click", (e) => {
     clear(e.target.textContent);
     if (incorrectInputData) {
         for (let number of numbers) {
-            number.setAttribute("disabled", null);
+            number.removeAttribute("disabled");
             number.classList.remove("default-button_disabled_true");
         }
         for (let operation of operations) {
-            operation.setAttribute("disabled", null);
+            operation.removeAttribute("disabled");
             operation.classList.remove("default-button_disabled_true");
         }
-        del_btn.setAttribute("disabled", null);
+        del_btn.removeAttribute("disabled");
         del_btn.classList.remove("default-button_disabled_true");
-        decimal_btn.setAttribute("disabled", null);
+        decimal_btn.removeAttribute("disabled");
         decimal_btn.classList.remove("default-button_disabled_true");
         incorrectInputData = false;
     }
@@ -101,6 +101,7 @@ function operationPress(op) {
                 decimal_btn.setAttribute("disabled", true);
                 decimal_btn.classList.add("default-button_disabled_true");
                 incorrectInputData = true;
+                MemoryCurrentNumber = 0;
             }
         } else {
             MemoryNewNumber = true;
@@ -146,6 +147,7 @@ function operationPress(op) {
                     decimal_btn.setAttribute("disabled", true);
                     decimal_btn.classList.add("default-button_disabled_true");
                     incorrectInputData = true;
+                    MemoryCurrentNumber = 0;
                 }
             } else {
                 MemoryCurrentNumber = +localOperationMemory;
