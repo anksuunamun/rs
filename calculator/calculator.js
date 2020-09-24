@@ -77,7 +77,7 @@ function operationPress(op) {
     } else {
         if (op === 'SQRT') {
             if ((+localOperationMemory) >= 0) {
-                MemoryCurrentNumber = Math.sqrt(+localOperationMemory)
+                MemoryCurrentNumber = parseFloat(Math.sqrt(+localOperationMemory).toPrecision(12))
                 document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber;
             } else {
                 document.getElementById("calculator-output").innerHTML = 'Введены неверные данные'
@@ -111,16 +111,16 @@ function operationPress(op) {
                 isDecimal(+localOperationMemory, true);
                 MemoryCurrentNumber /= +localOperationMemory;
             } else if (MemoryPendingOperation === 'POW') {
-                MemoryCurrentNumber = Math.pow(MemoryCurrentNumber, +localOperationMemory)
+                MemoryCurrentNumber = parseFloat(Math.pow(MemoryCurrentNumber, +localOperationMemory).toPrecision(7))
+
 
             } else {
                 MemoryCurrentNumber = +localOperationMemory;
             }
-            if (MemoryCurrentNumber === Math.trunc(MemoryCurrentNumber)) {
-                document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber.toFixed(0)
-            } else {
+            if (decimalPlaces !== 0 && MemoryPendingOperation !== "POW") {
                 document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber.toFixed(decimalPlaces);
             }
+            document.getElementById("calculator-output").innerHTML = MemoryCurrentNumber
             MemoryPendingOperation = op;
         }
     }
@@ -129,7 +129,7 @@ function operationPress(op) {
 function clear(action) {
     if (action === 'AC') {
         document.getElementById("calculator-output").innerHTML = '0';
-        MemoryNewNumber = true;
+        MemoryNewNumber = false;
         MemoryCurrentNumber = 0;
         MemoryPendingOperation = '';
         decimalPlaces = 0;
@@ -137,7 +137,12 @@ function clear(action) {
         if (decimalPlaces !== 0) {
             decimalPlaces -= 1;
         }
-        document.getElementById("calculator-output").innerHTML = document.getElementById("calculator-output").innerHTML.toString().slice(0, -1);
+        if ((document.getElementById("calculator-output").innerHTML).indexOf('-') === 0 || document.getElementById("calculator-output").innerHTML.length === 1) {
+            document.getElementById("calculator-output").innerHTML = '0';
+        }
+         else {
+            document.getElementById("calculator-output").innerHTML = document.getElementById("calculator-output").innerHTML.toString().slice(0, -1);
+        }
     }
 }
 
