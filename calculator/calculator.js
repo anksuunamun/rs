@@ -120,8 +120,8 @@ function operationPress(op) {
                 MemoryCurrentNumber /= +localOperationMemory;
             } else if (MemoryPendingOperation === "POW") {
                 if (
-                    isNaN(
-                        !parseFloat(
+                    !isNaN(
+                        parseFloat(
                             Math.pow(MemoryCurrentNumber, +localOperationMemory).toPrecision(
                                 7
                             )
