@@ -11,6 +11,7 @@ html {
 .content-wrapper {
     width: 1200px;
     margin: 0 auto;
+    height: 100%;
 }
 
 .background-wrapper:first-child {
@@ -101,7 +102,6 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /*   margin-right: 42px;*/
     padding-top: 163px;
 }
 
@@ -111,7 +111,7 @@ html {
 }
 
 .not-only-block__h2 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia;
     font-style: normal;
     font-weight: normal;
     font-size: 44px;
@@ -156,3 +156,53 @@ html {
 .not-only-block__a:hover {
     background: #FDDCC4;
 }
+
+.background-wrapper:nth-child(2) {
+    background: #FFFFFF;
+    height: 588px;
+}
+
+.about-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 120px;
+    padding: 80px 175px 100px;
+    align-items: center;
+}
+
+.about-block__img {
+    width: 300px;
+    height: 408px;
+}
+
+.about-block__text-block {
+    width: 430px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-block__h2 {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 0;
+    width: 370px;
+    height: 90px;
+}
+
+.about-block__p {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+    color: #4C4C4C;
+    margin: 0;
+}
+
