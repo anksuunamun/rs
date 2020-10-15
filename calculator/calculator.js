@@ -161,7 +161,7 @@ function operationPress(op) {
                     MemoryCurrentNumber
                 ) ?
                 "Введены неверные данные" :
-                MemoryCurrentNumber;
+                parseFloat(MemoryCurrentNumber.toPrecision(7));
             MemoryPendingOperation = op;
         }
     }
