@@ -15,9 +15,11 @@ html {
 }
 
 .background-wrapper:first-child {
-    background-image: #FFFFFF;
+    background-color: #FFFFFF;
     height: 120px;
     padding-bottom: 30px;
+    position: sticky; /* Липкое позиционирование */
+    top: 0; /* Положение сверху */
 }
 
 .header {
